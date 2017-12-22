@@ -14,3 +14,9 @@ OPENID_PROVIDERS = [
     { 'name': 'AOL', 'url': 'http://openid.aol.com/<username>' },
     { 'name': 'Flickr', 'url': 'http://www.flickr.com/<username>' },
     { 'name': 'MyOpenID', 'url': 'https://www.myopenid.com' }]
+
+# sqlite 数据库配置
+import os
+basedir = os.path.abspath(os.path.dirname(__file__)) 
+SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.db') #数据库路径
+SQLALCHEMY_MIGRATE_REPO = os.path.join(basedir, 'db_repository') # SQLAlchemy-migrate 数据文件存储在这里
